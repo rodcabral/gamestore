@@ -195,5 +195,6 @@ const styles = StyleSheet.create({
         color: colors.white,
         fontFamily: fonts.text,
         marginTop: 6,
+        textAlign: 'center'
     }
 })

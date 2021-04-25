@@ -2,8 +2,8 @@
     "mostDownloaded": [
         {
             "id": 1,
-            "name": "Free Fire",
-            "cover": "https://wallpaperaccess.com/full/2070156.jpg"
+            "name": "Genshin Impact",
+            "cover": "https://s2.glbimg.com/6oN5i8jj_D3zNR_bdcUoLFa_s-U=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2020/k/g/TNZTOiTSqbUAZFrQbB2g/genshin-impact-lancamento-the-squad.jpg"
         },
         {
             "id": 2,
@@ -12,56 +12,55 @@
         },
         {
             "id": 3,
-            "name": "Clash Of Clans",
+            "name": "Free Fire",
             "cover": "https://wallpaperaccess.com/full/2070156.jpg"
         },
         {
             "id": 4,
-            "name": "None",
-            "cover": "https://wallpaperaccess.com/full/2070156.jpg"
+            "name": "Clash Of Clans",
+            "cover": "https://uploadcomet.com/wp-content/uploads/2020/04/clash-of-clans.jpg"
         },
         {
             "id": 5,
-            "name": "None",
-            "cover": "https://wallpaperaccess.com/full/2070156.jpg"
+            "name": "Hearthstone",
+            "cover": "https://i.ytimg.com/vi/TE9uetK0JQ4/maxresdefault.jpg"
         },
         {
             "id": 6,
-            "name": "None",
-            "cover": "https://wallpaperaccess.com/full/2070156.jpg"
+            "name": "PUBG Mobile",
+            "cover": "https://multiversomais.com/wp-content/uploads/2021/04/youtubegaming2560_1440.jpg"
         }
     ],
-
     "recommended": [
         {
             "id": 1,
-            "name": "None",
-            "cover": "https://wallpaperaccess.com/full/2070156.jpg"
+            "name": "Call Of Duty: Mobile",
+            "cover": "https://cdn1.dotesports.com/wp-content/uploads/sites/3/2021/02/11123637/GarenaWorld.png"
         },
         {
             "id": 2,
-            "name": "None",
-            "cover": "https://wallpaperaccess.com/full/2070156.jpg"
+            "name": "Crash Bandicoot",
+            "cover": "https://modded-1.com/wp-content/uploads/2021/04/cover-crash-bandicoot-mobile-1200x675.jpg"
         },
         {
             "id": 3,
-            "name": "None",
-            "cover": "https://wallpaperaccess.com/full/2070156.jpg"
+            "name": "Legends Of Runeterra",
+            "cover": "https://static-prod.weplay.tv/2019-11-14/e209078db40703718887fea470329dad_large_cover.2E221D-CF7E35-84949C.png"
         },
         {
             "id": 4,
-            "name": "None",
-            "cover": "https://wallpaperaccess.com/full/2070156.jpg"
+            "name": "Among Us",
+            "cover": "https://upload.wikimedia.org/wikipedia/pt/7/72/AmongUs_CoverArt.jpg"
         },
         {
             "id": 5,
-            "name": "None",
-            "cover": "https://wallpaperaccess.com/full/2070156.jpg"
+            "name": "Monument Valley 2",
+            "cover": "https://www.mobilegamer.com.br/wp-content/uploads/2017/06/Monument-Valley-2-Main-by-Ustwo-games.jpg"
         },
         {
             "id": 6,
-            "name": "None",
-            "cover": "https://wallpaperaccess.com/full/2070156.jpg"
+            "name": "The room",
+            "cover": "https://upload.wikimedia.org/wikipedia/en/c/cb/The_room_2012_vg_cover.png"
         }
     ]
 }
