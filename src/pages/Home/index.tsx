@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, View, Text, StyleSheet, Platform, Image, TextInput, TouchableOpacity, FlatList } from 'react-native';
+import { SafeAreaView, View, Text, StyleSheet, Platform, Image, TextInput, TouchableOpacity, FlatList, ScrollView } from 'react-native';
 
 import { Feather } from '@expo/vector-icons'
 
@@ -11,66 +11,95 @@ import data from '../../services/games.json'
 export default function Home() {
     return (
         <SafeAreaView style={styles.container}>
-            <View style={styles.header}>
-                <View style={styles.greetings}>
-                    <Text style={styles.title}>Hello, Rodrigo.</Text>
-                    <View style={styles.gems}>
-                        <Text style={styles.gemText}>You have</Text>
-                        <Text style={styles.gemQuantity}>999</Text>
-                        <Image source={require('../../assets/gem.png')} style={styles.gem} />
-                        <Text style={styles.gemText}>gems</Text>
+            <ScrollView>
+                <View style={styles.header}>
+                    <View style={styles.greetings}>
+                        <Text style={styles.title}>Hello, Rodrigo.</Text>
+                        <View style={styles.gems}>
+                            <Text style={styles.gemText}>You have</Text>
+                            <Text style={styles.gemQuantity}>999</Text>
+                            <Image source={require('../../assets/gem.png')} style={styles.gem} />
+                            <Text style={styles.gemText}>gems</Text>
+                        </View>
+                    </View>
+                    <Image source={{ uri: "https://pbs.twimg.com/media/DAw4aVpWAAEreK8.jpg" }} style={styles.profileImage} />
+                </View>
+                <View style={styles.searchContainer}>
+                    <Feather name="search" size={24} color={colors.main} />
+                    <TextInput style={styles.searchInput} placeholder="Search game" placeholderTextColor={colors.gray} />
+                </View>
+                <View style={styles.gendersContainer}>
+                    <View>
+                        <TouchableOpacity activeOpacity={0.7} style={styles.genderBox}>
+                            <Image style={styles.genderImage} source={require('../../assets/sword.png')} />
+                        </TouchableOpacity>
+                        <Text style={styles.genderName}>RPG</Text>
+                    </View>
+                    <View>
+                        <TouchableOpacity activeOpacity={0.7} style={styles.genderBox}>
+                            <Image style={styles.genderImage} source={require('../../assets/chess-piece.png')} />
+                        </TouchableOpacity>
+                        <Text style={styles.genderName}>Strategy</Text>
+                    </View>
+                    <View>
+                        <TouchableOpacity activeOpacity={0.7} style={styles.genderBox}>
+                            <Image style={styles.genderImage} source={require('../../assets/security.png')} />
+                        </TouchableOpacity>
+                        <Text style={styles.genderName}>Arcade</Text>
+                    </View>
+                    <View>
+                        <TouchableOpacity activeOpacity={0.7} style={styles.genderBox}>
+                            <Image style={styles.genderImage} source={require('../../assets/vs.png')} />
+                        </TouchableOpacity>
+                        <Text style={styles.genderName}>MOBA</Text>
+                    </View>
+                    <View>
+                        <TouchableOpacity activeOpacity={0.7} style={styles.genderBox}>
+                            <Image style={styles.genderImage} source={require('../../assets/targeting.png')} />
+                        </TouchableOpacity>
+                        <Text style={styles.genderName}>FPS</Text>
                     </View>
                 </View>
-                <Image source={{ uri: "https://wallpapercave.com/wp/wp7513825.jpg" }} style={styles.profileImage} />
-            </View>
-            <View style={styles.searchContainer}>
-                <Feather name="search" size={24} color={colors.main} />
-                <TextInput style={styles.searchInput} placeholder="Search game" placeholderTextColor={colors.gray} />
-            </View>
-            <View style={styles.gendersContainer}>
-                <TouchableOpacity activeOpacity={0.7} style={styles.genderBox}>
-                    <Image style={styles.genderImage} source={require('../../assets/sword.png')} />
-                </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.7} style={styles.genderBox}>
-                    <Image style={styles.genderImage} source={require('../../assets/chess-piece.png')} />
-                </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.7} style={styles.genderBox}>
-                    <Image style={styles.genderImage} source={require('../../assets/security.png')} />
-                </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.7} style={styles.genderBox}>
-                    <Image style={styles.genderImage} source={require('../../assets/vs.png')} />
-                </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.7} style={styles.genderBox}>
-                    <Image style={styles.genderImage} source={require('../../assets/targeting.png')} />
-                </TouchableOpacity>
-            </View>
-            <View style={styles.mostDownloadedContainer}>
-                <Text style={styles.sectionTitle}>Most Downloaded</Text>
-                <FlatList
-                    data={data.mostDownloaded}
-                    renderItem={({ item }) => (
-                        <View>
-                            <Image style={styles.mostDownloadedImage} source={{ uri: item.cover }} />
+                <View style={styles.mostDownloadedContainer}>
+                    <Text style={styles.sectionTitle}>Most Downloaded</Text>
+                    <FlatList
+                        data={data.mostDownloaded}
+                        renderItem={({ item }) => (
+                            <TouchableOpacity activeOpacity={0.7} key={item.id}>
+                                <Image style={styles.mostDownloadedImage} source={{ uri: item.cover }} />
+                            </TouchableOpacity>
+                        )}
+                        horizontal
+                        showsHorizontalScrollIndicator={false}
+                        keyExtractor={item => item.id.toString()}
+                    />
+                </View>
+                <View style={styles.recommendedContainer}>
+                    <Text style={styles.sectionTitle}>Recommended</Text>
+                    <FlatList
+                        data={data.recommended}
+                        renderItem={({ item }) => (
+                            <TouchableOpacity activeOpacity={0.7} key={item.id} style={styles.recommendedContent}>
+                                <Image style={styles.recommendedImage} source={{ uri: item.cover }} />
+                                <Text style={styles.gameName}>{item.name}</Text>
+                            </TouchableOpacity>
+                        )}
+                        keyExtractor={item => item.id.toString()}
+                        horizontal
+                        showsHorizontalScrollIndicator={false}
+                    />
+                </View>
+                <View style={styles.upcomingContainer}>
+                    <Text style={styles.sectionTitle}>Upcoming</Text>
+                    <View style={styles.upcomingGame}>
+                        <Image style={styles.upcomingGameImage} source={{ uri: "https://mundoconectado.com.br/uploads/chamadas/project-cars-go-data-lancamento-smartphones-capa.jpg" }} />
+                        <View style={styles.aboutUpcomingGame}>
+                            <Text style={styles.upcomingGameTitle}>Project Cars: GO</Text>
+                            <Text style={styles.upcomingGameAbout}>Project Cars is the long-awaited mobile spinoff to developer Slightly Mad Studios’ popular racing sim series.</Text>
                         </View>
-                    )}
-                    horizontal
-                    showsHorizontalScrollIndicator={false}
-                />
-            </View>
-            <View style={styles.recommendedContainer}>
-                <Text style={styles.sectionTitle}>Recommended</Text>
-                <FlatList
-                    data={data.recommended}
-                    renderItem={({ item }) => (
-                        <View style={styles.recommendedContent}>
-                            <Image style={styles.recommendedImage} source={{ uri: item.cover }} />
-                            <Text style={styles.gameName}>{item.name}</Text>
-                        </View>
-                    )}
-                    horizontal
-                    showsHorizontalScrollIndicator={false}
-                />
-            </View>
+                    </View>
+                </View>
+            </ScrollView>
         </SafeAreaView>
     )
 }
@@ -88,29 +117,28 @@ const styles = StyleSheet.create({
         paddingHorizontal: 21,
     },
     greetings: {
-
     },
     title: {
-        fontSize: 18,
+        fontSize: 20,
         color: colors.white,
         fontFamily: fonts.heading,
         marginBottom: 2
     },
     subtitle: {
         color: colors.gray,
-        fontSize: 12,
+        fontSize: 13,
         fontFamily: fonts.text
     },
     profileImage: {
-        width: 56,
-        height: 56,
+        width: 55,
+        height: 55,
         borderRadius: 100,
         borderWidth: 1,
         borderColor: colors.main,
     },
     searchContainer: {
         backgroundColor: colors.dark_gray,
-        height: 40,
+        height: 45,
         marginHorizontal: 21,
         borderRadius: 20,
         marginTop: 30,
@@ -133,8 +161,8 @@ const styles = StyleSheet.create({
         marginTop: 30,
     },
     genderBox: {
-        width: 53,
-        height: 53,
+        width: 55,
+        height: 55,
         backgroundColor: colors.main,
         borderRadius: 5,
         alignItems: 'center',
@@ -143,6 +171,13 @@ const styles = StyleSheet.create({
     genderImage: {
         width: 32,
         height: 32,
+    },
+    genderName: {
+        color: colors.white,
+        textAlign: 'center',
+        fontSize: 13,
+        fontFamily: fonts.medium,
+        marginTop: 6
     },
     gems: {
         flexDirection: 'row',
@@ -191,10 +226,39 @@ const styles = StyleSheet.create({
 
     },
     gameName: {
-        fontSize: 12,
+        fontSize: 13,
         color: colors.white,
         fontFamily: fonts.text,
         marginTop: 6,
-        textAlign: 'center'
+        textAlign: 'center',
+    },
+    upcomingContainer: {
+        marginTop: 30,
+        paddingHorizontal: 21,
+        paddingBottom: 100
+    },
+    upcomingGame: {
+        flexDirection: 'row'
+    },
+    upcomingGameImage: {
+        width: 100,
+        height: 120,
+        borderRadius: 5,
+        marginRight: 10
+    },
+    aboutUpcomingGame: {
+
+    },
+    upcomingGameTitle: {
+        fontSize: 15,
+        color: colors.white,
+        fontFamily: fonts.medium,
+    },
+    upcomingGameAbout: {
+        fontFamily: fonts.text,
+        color: colors.gray,
+        width: 225,
+        marginTop: 6,
+        fontSize: 13
     }
 })
