@@ -4,7 +4,7 @@ import { SafeAreaView, View, Text, StyleSheet, Platform, Image, TextInput, Touch
 import { Feather } from '@expo/vector-icons'
 
 import colors from '../../styles/colors';
-
+import fonts from '../../styles/fonts';
 
 export default function Home() {
     return (
@@ -64,12 +64,13 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 18,
         color: colors.white,
-        fontWeight: 'bold',
+        fontFamily: fonts.heading,
         marginBottom: 2
     },
     subtitle: {
         color: colors.gray,
         fontSize: 12,
+        fontFamily: fonts.text
     },
     profileImage: {
         width: 56,
@@ -93,7 +94,8 @@ const styles = StyleSheet.create({
         marginLeft: 10,
         flex: 1,
         height: '100%',
-        color: colors.white
+        color: colors.white,
+        fontFamily: fonts.text
     },
     gendersContainer: {
         flexDirection: 'row',
