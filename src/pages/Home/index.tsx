@@ -1,10 +1,12 @@
 import React from 'react';
-import { SafeAreaView, View, Text, StyleSheet, Platform, Image, TextInput, TouchableOpacity } from 'react-native';
+import { SafeAreaView, View, Text, StyleSheet, Platform, Image, TextInput, TouchableOpacity, FlatList } from 'react-native';
 
 import { Feather } from '@expo/vector-icons'
 
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
+
+import data from '../../services/games.json'
 
 export default function Home() {
     return (
@@ -41,6 +43,33 @@ export default function Home() {
                 <TouchableOpacity activeOpacity={0.7} style={styles.genderBox}>
                     <Image style={styles.genderImage} source={require('../../assets/targeting.png')} />
                 </TouchableOpacity>
+            </View>
+            <View style={styles.mostDownloadedContainer}>
+                <Text style={styles.sectionTitle}>Most Downloaded</Text>
+                <FlatList
+                    data={data.mostDownloaded}
+                    renderItem={({ item }) => (
+                        <View>
+                            <Image style={styles.mostDownloadedImage} source={{ uri: item.cover }} />
+                        </View>
+                    )}
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                />
+            </View>
+            <View style={styles.recommendedContainer}>
+                <Text style={styles.sectionTitle}>Recommended</Text>
+                <FlatList
+                    data={data.recommended}
+                    renderItem={({ item }) => (
+                        <View style={styles.recommendedContent}>
+                            <Image style={styles.recommendedImage} source={{ uri: item.cover }} />
+                            <Text style={styles.gameName}>{item.name}</Text>
+                        </View>
+                    )}
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                />
             </View>
         </SafeAreaView>
     )
@@ -131,5 +160,40 @@ const styles = StyleSheet.create({
     gemQuantity: {
         marginLeft: 5,
         color: colors.main
+    },
+    mostDownloadedContainer: {
+        marginTop: 30,
+        paddingLeft: 21,
+    },
+    sectionTitle: {
+        marginBottom: 10,
+        fontSize: 16,
+        color: colors.white,
+        fontFamily: fonts.medium
+    },
+    mostDownloadedImage: {
+        width: 153,
+        height: 100,
+        marginRight: 10,
+        borderRadius: 5,
+    },
+    recommendedContainer: {
+        marginTop: 30,
+        paddingLeft: 21,
+    },
+    recommendedImage: {
+        width: 110,
+        height: 70,
+        marginRight: 10,
+        borderRadius: 5
+    },
+    recommendedContent: {
+
+    },
+    gameName: {
+        fontSize: 12,
+        color: colors.white,
+        fontFamily: fonts.text,
+        marginTop: 6,
     }
 })
