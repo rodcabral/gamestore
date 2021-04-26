@@ -1,12 +1,12 @@
 import React from 'react';
 import { SafeAreaView, View, Text, StyleSheet, Platform, Image, TextInput, TouchableOpacity, FlatList, ScrollView } from 'react-native';
-
-import { Feather } from '@expo/vector-icons'
+import { Feather } from '@expo/vector-icons';
 
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
+import data from '../../services/games.json';
 
-import data from '../../services/games.json'
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default function Home() {
     return (
@@ -29,36 +29,36 @@ export default function Home() {
                     <TextInput style={styles.searchInput} placeholder="Search game" placeholderTextColor={colors.gray} />
                 </View>
                 <View style={styles.gendersContainer}>
-                    <View>
-                        <TouchableOpacity activeOpacity={0.7} style={styles.genderBox}>
+                    <TouchableOpacity activeOpacity={0.6}>
+                        <LinearGradient colors={["#66FFAC", "#00FF75"]} style={styles.genderBox}>
                             <Image style={styles.genderImage} source={require('../../assets/sword.png')} />
-                        </TouchableOpacity>
+                        </LinearGradient>
                         <Text style={styles.genderName}>RPG</Text>
-                    </View>
-                    <View>
-                        <TouchableOpacity activeOpacity={0.7} style={styles.genderBox}>
+                    </TouchableOpacity>
+                    <TouchableOpacity activeOpacity={0.6}>
+                        <LinearGradient colors={["#66FFAC", "#00FF75"]} style={styles.genderBox}>
                             <Image style={styles.genderImage} source={require('../../assets/chess-piece.png')} />
-                        </TouchableOpacity>
+                        </LinearGradient >
                         <Text style={styles.genderName}>Strategy</Text>
-                    </View>
-                    <View>
-                        <TouchableOpacity activeOpacity={0.7} style={styles.genderBox}>
+                    </TouchableOpacity>
+                    <TouchableOpacity activeOpacity={0.6}>
+                        <LinearGradient colors={["#66FFAC", "#00FF75"]} style={styles.genderBox}>
                             <Image style={styles.genderImage} source={require('../../assets/security.png')} />
-                        </TouchableOpacity>
+                        </LinearGradient >
                         <Text style={styles.genderName}>Arcade</Text>
-                    </View>
-                    <View>
-                        <TouchableOpacity activeOpacity={0.7} style={styles.genderBox}>
+                    </TouchableOpacity>
+                    <TouchableOpacity activeOpacity={0.6}>
+                        <LinearGradient colors={["#66FFAC", "#00FF75"]} style={styles.genderBox}>
                             <Image style={styles.genderImage} source={require('../../assets/vs.png')} />
-                        </TouchableOpacity>
+                        </LinearGradient >
                         <Text style={styles.genderName}>MOBA</Text>
-                    </View>
-                    <View>
-                        <TouchableOpacity activeOpacity={0.7} style={styles.genderBox}>
+                    </TouchableOpacity>
+                    <TouchableOpacity activeOpacity={0.6}>
+                        <LinearGradient colors={["#66FFAC", "#00FF75"]} style={styles.genderBox}>
                             <Image style={styles.genderImage} source={require('../../assets/targeting.png')} />
-                        </TouchableOpacity>
+                        </LinearGradient>
                         <Text style={styles.genderName}>FPS</Text>
-                    </View>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.mostDownloadedContainer}>
                     <Text style={styles.sectionTitle}>Most Downloaded</Text>
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingHorizontal: 21,
+        paddingHorizontal: 15,
     },
     greetings: {
     },
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
     searchContainer: {
         backgroundColor: colors.dark_gray,
         height: 45,
-        marginHorizontal: 21,
+        marginHorizontal: 15,
         borderRadius: 20,
         marginTop: 30,
 
@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
     gendersContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        paddingHorizontal: 21,
+        paddingHorizontal: 15,
         marginTop: 30,
     },
     genderBox: {
@@ -198,7 +198,7 @@ const styles = StyleSheet.create({
     },
     mostDownloadedContainer: {
         marginTop: 30,
-        paddingLeft: 21,
+        paddingLeft: 15,
     },
     sectionTitle: {
         marginBottom: 10,
@@ -214,7 +214,7 @@ const styles = StyleSheet.create({
     },
     recommendedContainer: {
         marginTop: 30,
-        paddingLeft: 21,
+        paddingLeft: 15,
     },
     recommendedImage: {
         width: 110,
@@ -234,7 +234,7 @@ const styles = StyleSheet.create({
     },
     upcomingContainer: {
         marginTop: 30,
-        paddingHorizontal: 21,
+        paddingHorizontal: 15,
         paddingBottom: 100
     },
     upcomingGame: {
