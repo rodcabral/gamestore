@@ -1,7 +1,6 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native'
-
-import Home from './src/pages/Home';
+import { NavigationContainer } from '@react-navigation/native';
+import { StatusBar } from 'react-native';
 
 import AppLoading from 'expo-app-loading';
 
@@ -10,7 +9,7 @@ import {
   Inter_400Regular,
   Inter_500Medium,
   Inter_600SemiBold,
-} from '@expo-google-fonts/inter'
+} from '@expo-google-fonts/inter';
 import Tabs from './src/routes/tabs';
 
 export default function App() {
@@ -26,6 +25,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
+      <StatusBar backgroundColor="#35343D" />
       <Tabs />
     </NavigationContainer>
   );

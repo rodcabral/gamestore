@@ -1,6 +1,6 @@
 import React from 'react';
-import { View } from 'react-native'
-import { Feather } from '@expo/vector-icons'
+import { View } from 'react-native';
+import { Feather } from '@expo/vector-icons';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '../pages/Home';
@@ -29,7 +29,7 @@ const Tabs = () => {
                 name="Home"
                 component={Home}
                 options={{
-                    tabBarIcon: ({ focused }) => (
+                    tabBarIcon: () => (
                         <View style={{ alignItems: 'center', justifyContent: 'center' }}>
                             <Feather name="home" color={colors.main} size={26} />
                         </View>
@@ -39,9 +39,9 @@ const Tabs = () => {
                 name="Achievements"
                 component={Home}
                 options={{
-                    tabBarIcon: ({ focused }) => (
+                    tabBarIcon: () => (
                         <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                            <Feather name="award" color={colors.main} size={26} />
+                            <Feather name="search" color={colors.main} size={26} />
                         </View>
                     )
                 }} />
@@ -49,9 +49,9 @@ const Tabs = () => {
                 name="Store"
                 component={Home}
                 options={{
-                    tabBarIcon: ({ focused }) => (
+                    tabBarIcon: () => (
                         <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                            <Feather name="shopping-bag" color={colors.main} size={26} />
+                            <Feather name="award" color={colors.main} size={26} />
                         </View>
                     )
                 }} />
@@ -59,7 +59,7 @@ const Tabs = () => {
                 name="Config"
                 component={Home}
                 options={{
-                    tabBarIcon: ({ focused }) => (
+                    tabBarIcon: () => (
                         <View style={{ alignItems: 'center', justifyContent: 'center' }}>
                             <Feather name="settings" color={colors.main} size={26} />
                         </View>

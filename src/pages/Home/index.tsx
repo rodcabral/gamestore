@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, View, Text, StyleSheet, Platform, Image, TextInput, TouchableOpacity, FlatList, ScrollView } from 'react-native';
+import { SafeAreaView, View, Text, StyleSheet, Image, TextInput, TouchableOpacity, FlatList, ScrollView } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
 import colors from '../../styles/colors';
@@ -11,7 +11,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 export default function Home() {
     return (
         <SafeAreaView style={styles.container}>
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={styles.header}>
                     <View style={styles.greetings}>
                         <Text style={styles.title}>Hello, Rodrigo.</Text>
@@ -30,31 +30,31 @@ export default function Home() {
                 </View>
                 <View style={styles.gendersContainer}>
                     <TouchableOpacity activeOpacity={0.6}>
-                        <LinearGradient colors={["#66FFAC", "#00FF75"]} style={styles.genderBox}>
+                        <LinearGradient colors={["#66FFAC", "#1FFF86"]} style={styles.genderBox}>
                             <Image style={styles.genderImage} source={require('../../assets/sword.png')} />
                         </LinearGradient>
                         <Text style={styles.genderName}>RPG</Text>
                     </TouchableOpacity>
                     <TouchableOpacity activeOpacity={0.6}>
-                        <LinearGradient colors={["#66FFAC", "#00FF75"]} style={styles.genderBox}>
+                        <LinearGradient colors={["#66FFAC", "#1FFF86"]} style={styles.genderBox}>
                             <Image style={styles.genderImage} source={require('../../assets/chess-piece.png')} />
                         </LinearGradient >
                         <Text style={styles.genderName}>Strategy</Text>
                     </TouchableOpacity>
                     <TouchableOpacity activeOpacity={0.6}>
-                        <LinearGradient colors={["#66FFAC", "#00FF75"]} style={styles.genderBox}>
+                        <LinearGradient colors={["#66FFAC", "#1FFF86"]} style={styles.genderBox}>
                             <Image style={styles.genderImage} source={require('../../assets/security.png')} />
                         </LinearGradient >
                         <Text style={styles.genderName}>Arcade</Text>
                     </TouchableOpacity>
                     <TouchableOpacity activeOpacity={0.6}>
-                        <LinearGradient colors={["#66FFAC", "#00FF75"]} style={styles.genderBox}>
+                        <LinearGradient colors={["#66FFAC", "#1FFF86"]} style={styles.genderBox}>
                             <Image style={styles.genderImage} source={require('../../assets/vs.png')} />
                         </LinearGradient >
                         <Text style={styles.genderName}>MOBA</Text>
                     </TouchableOpacity>
                     <TouchableOpacity activeOpacity={0.6}>
-                        <LinearGradient colors={["#66FFAC", "#00FF75"]} style={styles.genderBox}>
+                        <LinearGradient colors={["#66FFAC", "#1FFF86"]} style={styles.genderBox}>
                             <Image style={styles.genderImage} source={require('../../assets/targeting.png')} />
                         </LinearGradient>
                         <Text style={styles.genderName}>FPS</Text>
@@ -67,9 +67,11 @@ export default function Home() {
                         renderItem={({ item }) => (
                             <TouchableOpacity activeOpacity={0.7} key={item.id}>
                                 <Image style={styles.mostDownloadedImage} source={{ uri: item.cover }} />
+                                <Text style={styles.gameName}>{item.name}</Text>
                             </TouchableOpacity>
                         )}
                         horizontal
+                        maxToRenderPerBatch={3}
                         showsHorizontalScrollIndicator={false}
                         keyExtractor={item => item.id.toString()}
                     />
@@ -79,13 +81,14 @@ export default function Home() {
                     <FlatList
                         data={data.recommended}
                         renderItem={({ item }) => (
-                            <TouchableOpacity activeOpacity={0.7} key={item.id} style={styles.recommendedContent}>
+                            <TouchableOpacity activeOpacity={0.7} key={item.id}>
                                 <Image style={styles.recommendedImage} source={{ uri: item.cover }} />
                                 <Text style={styles.gameName}>{item.name}</Text>
                             </TouchableOpacity>
                         )}
                         keyExtractor={item => item.id.toString()}
                         horizontal
+                        maxToRenderPerBatch={3}
                         showsHorizontalScrollIndicator={false}
                     />
                 </View>
@@ -108,7 +111,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: colors.background,
-        paddingTop: Platform.OS === "android" ? 30 : 0,
+        paddingTop: 8,
     },
     header: {
         flexDirection: 'row',
@@ -202,7 +205,7 @@ const styles = StyleSheet.create({
     },
     sectionTitle: {
         marginBottom: 10,
-        fontSize: 16,
+        fontSize: 17,
         color: colors.white,
         fontFamily: fonts.medium
     },
@@ -217,20 +220,20 @@ const styles = StyleSheet.create({
         paddingLeft: 15,
     },
     recommendedImage: {
-        width: 110,
-        height: 70,
+        width: 115,
+        height: 75,
         marginRight: 10,
         borderRadius: 5
     },
     recommendedContent: {
-
+        borderRadius: 5,
     },
     gameName: {
         fontSize: 13,
         color: colors.white,
         fontFamily: fonts.text,
         marginTop: 6,
-        textAlign: 'center',
+        width: 120
     },
     upcomingContainer: {
         marginTop: 30,
@@ -238,13 +241,13 @@ const styles = StyleSheet.create({
         paddingBottom: 100
     },
     upcomingGame: {
-        flexDirection: 'row'
+        flexDirection: 'row',
     },
     upcomingGameImage: {
         width: 100,
         height: 120,
         borderRadius: 5,
-        marginRight: 10
+        marginRight: 10,
     },
     aboutUpcomingGame: {
 
@@ -261,4 +264,4 @@ const styles = StyleSheet.create({
         marginTop: 6,
         fontSize: 13
     }
-})
+});
