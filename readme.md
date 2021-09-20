@@ -6,8 +6,8 @@
   You can check the design on my <a href="https://dribbble.com/rodrigocabral">dribbble</a>
 </p>
 <p align="center">
-  <a href="rocket-Technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="lamp-how-to-use">How To Use</a>&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-Technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="#lamp-how-to-use">How To Use</a>&nbsp;&nbsp;&nbsp;
 </p>
 <br/>
 <div align="center">
@@ -20,7 +20,7 @@
 - [React Native (expo)](https://expo.io)
 - [Typescript](https://www.typescriptlang.org)
 
-## :lamp: How to use
+## :bulb: How to use
 
 To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js](https://nodejs.org/) + [Npm](https://www.npmjs.com) installed on your computer. From your command line:
 
