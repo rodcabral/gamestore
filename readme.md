@@ -11,7 +11,9 @@ You can check the design in my [dribbble](https://dribbble.com/rodrigocabral)
 ## 🚀 Technologies
 
 - [React Native (expo)](https://expo.io)
+
 <br />
+
 ## 🚀 How to use
 
 To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js](https://nodejs.org/) + [Npm](https://www.npmjs.com) installed on your computer. From your command line:
