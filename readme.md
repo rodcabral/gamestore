@@ -11,6 +11,7 @@ You can check the design in my [dribbble](https://dribbble.com/rodrigocabral)
 ## 🚀 Technologies
 
 - [React Native (expo)](https://expo.io)
+- [Typescript](https://www.typescriptlang.org)
 
 <br />
 
