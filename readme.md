@@ -1,6 +1,6 @@
 <h1>Game Store</h1>
 
-### Homepage of a fictitious game store app made with React Native.
+#### Homepage of a fictitious game store app made with React Native.
 
 You can check the design in my [dribbble](https://dribbble.com/rodrigocabral)
 <br/>
