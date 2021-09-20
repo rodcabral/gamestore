@@ -7,7 +7,7 @@
 </p>
 <p align="center">
   <a href="#rocket-Technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="#lamp-how-to-use">How To Use</a>&nbsp;&nbsp;&nbsp;
+  <a href="#bulb-how-to-use">How To Use</a>&nbsp;&nbsp;&nbsp;
 </p>
 <br/>
 <div align="center">
