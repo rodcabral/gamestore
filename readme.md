@@ -1,19 +1,21 @@
-<h1>Game Store</h1>
+<h1 align="center">Game Store</h1>
 
-#### Homepage of a fictitious game store app made with React Native.
+<h4 align="center">Homepage of a fictitious game store app made with React Native.</h4>
 
-You can check the design in my [dribbble](https://dribbble.com/rodrigocabral)
+<p align="center">
+  You can check the design on my <a href="https://dribbble.com/rodrigocabral">dribbble</a>
+</p>
+
 <br/>
-<br/>
-<img src="game.png" width="300px">
+<div align="center">
+  <img src="game.png" width="300px">
+</div>
 <br />
 
 ## 🚀 Technologies
 
 - [React Native (expo)](https://expo.io)
 - [Typescript](https://www.typescriptlang.org)
-
-<br />
 
 ## 🚀 How to use
 
