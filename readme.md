@@ -1,6 +1,6 @@
 <h1 align="center">Game Store</h1>
 
-<h4 align="center">Homepage of a fictitious game store app made with React Native.</h4>
+<h4 align="center">Screen of a fictitious game store app made with React Native.</h4>
 
 <p align="center">
   <a href="#rocket-Technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
